@@ -50,6 +50,8 @@ public class Truco {
         
 }
 }
+
+
 // 1 - criação do baralho, cartas e nipes.
 // 2 - criação dos jogadores, 4 jogadores com nome, marcadores de pontos e cartas.
 // 3 - criação das regras do truco(elevação da pontuação da rodada), manilhas e sistema de sinal no jogo.
