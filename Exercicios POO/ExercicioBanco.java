@@ -14,7 +14,8 @@ class ContaBanco {
     private boolean status;
     private double saldo;
 
-    // Inicializando as variáveis.
+    // Inicializando as variáveis. (Com paramentros)
+    //Constructor com parametros.
     public ContaBanco(int numeroConta, String tipo, String nomeDono, double saldo, boolean status) {
 
         this.numeroConta = numeroConta;
@@ -68,8 +69,9 @@ class ContaBanco {
 
     //Metodos da classe ContaBanco. (Abrir, fechar conta, depositar, sacar e pagar mensalidade)
 
+    
     public void abrirConta(String tipo) {
-
+        //não esquecer de adicionar logica de mudança do numero da conta. numero da conta = numero da conta + 1
     }
 
     public void fecharConta() {
@@ -86,6 +88,7 @@ class ContaBanco {
 
     public void pagarMensalidade() {
 
+        // pode ser melhorado unificando os dois ifs em um só.
         if (this.saldo >= 12) {
 
             if (tipo.equals("Conta Corrente")) {
@@ -121,11 +124,19 @@ class ContaBanco {
         }
     }
 
-
+    // Inicializando as variáveis. (Sem paramentros)
+    //Constructor padrão.
     //Constructor abertura de conta.
+    
     public ContaBanco() {
 
-        status = false;
+        this.numeroConta = 0;
+        this.tipo = "";
+        this.nomeDono = "Desconhecido";
+        this.saldo = 0.0;
+        this.status = false;
+
+        System.out.println("Conta fechada");
 
         // Definindo status inicial da conta.
         if (status == false) {
@@ -134,7 +145,7 @@ class ContaBanco {
             System.out.println("Conta aberta");
         }
 
-        //Definindo bonificação de acordo com o tipo de conta.
+        //Definindo bonificação de acordo com o tipo de conta. (mudar logica de bonificação para o metodo abrir conta)
         if (tipo.equals("Conta Corrente")) {
             this.saldo = 50;
             System.out.println("Conta corrente recebeu bonificacao de abertura de R$ 50,00");
