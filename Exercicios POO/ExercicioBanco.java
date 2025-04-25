@@ -66,6 +66,62 @@ class ContaBanco {
         this.status = status;
     }
 
+    //Metodos da classe ContaBanco. (Abrir, fechar conta, depositar, sacar e pagar mensalidade)
+
+    public void abrirConta(String tipo) {
+
+    }
+
+    public void fecharConta() {
+
+    }
+
+    public void depositar(double valor) {
+
+    }
+
+    public void sacar(double valor) {
+
+    }
+
+    public void pagarMensalidade() {
+
+        if (this.saldo >= 12) {
+
+            if (tipo.equals("Conta Corrente")) {
+                
+                this.saldo -= 12;
+                System.out.println("Mensalidade de R$ 12,00 paga com sucesso");
+                System.out.println("Seu saldo atual e de R$ " + this.saldo);
+
+            }
+
+        } else { 
+
+            System.out.println("Saldo insulficiente para pagar a mensalidade");
+
+        }
+
+        
+            
+        if (this.saldo >= 20) {
+            
+            if (tipo.equals("Conta Poupanca")) {
+
+            this.saldo -= 20;
+            System.out.println("Mensalidade de R$ 20,00 paga com sucesso");
+            System.out.println("Seu saldo atual e de R$ " + this.saldo);
+
+            }
+            
+        } else {
+
+            System.out.println("Saldo insulficiente para pagar a mensalidade");
+
+        }
+    }
+
+
     //Constructor abertura de conta.
     public ContaBanco() {
 
