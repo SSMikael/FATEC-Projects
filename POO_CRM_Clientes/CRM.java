@@ -26,6 +26,8 @@
  * 7. criar carrinho de compras;
  */
 
+import java.util.Scanner;
+
 public enum EstadoBrasil {
     AC("Acre", "AC"),
     AL("Alagoas", "AL"),
@@ -66,28 +68,19 @@ public class Endereco {
     private int numero;
 }
 
-private class Cliente {
+private class Usuario {
 
     private string email;
     private string senha;
-    private string nome;
-    private string cpf;
-    private Endereco endereco;
 
-    public Cliente(string email, string senha, string nome, string cpf, Endereco endereco) {
+    public Usuario(string email, string senha) {
         this.email = email;
         this.senha = senha;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.endereco = endereco;
     }
 
-    public Cliente() {
+    public Usuario() {
         this.email = "";
         this.senha = "";
-        this.nome = "";
-        this.cpf = "";
-        this.endereco = new Endereco();
     }
 
     public string getEmail() {
@@ -97,13 +90,54 @@ private class Cliente {
     public void setEmail(string email) {
         this.email = email;
     }
-    
+
     public string getSenha() {
         return senha;
     }
 
     public void setSenha(string senha) {
         this.senha = senha;
+    }
+
+    public criarUsuario() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu email:");
+
+        while (this.email == null || this.email.isEmpty()) {
+            System.out.println("Email inválido. Por favor digite novamente:");
+            this.email = scanner.nextLine();
+        }
+
+        System.out.println("Digite sua senha:");
+
+        while (this.senha == null || this.senha.isEmpty()) {
+            System.out.println("Senha inválida. Por favor digite novamente:");
+            this.senha = scanner.nextLine();
+        }
+        
+        System.out.println("Usuário criado com sucesso!");
+        scanner.close();
+    }
+}
+
+private class Cliente {
+
+    private string nome;
+    private string cpf;
+    private Endereco endereco;
+
+    public Cliente(string nome, string cpf, Endereco endereco) {
+
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+    }
+
+    public Cliente() {
+
+        this.nome = "";
+        this.cpf = "";
+        this.endereco = new Endereco();
     }
 
     public string getNome() {
@@ -128,5 +162,34 @@ private class Cliente {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+}
+
+public class CRM {
+
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Bem vindo ao CRM FATEC!");
+        system.out.println("Selecione uma das opções para prosseguir:");
+
+        int opcao;
+        opcao = 0;
+
+        system.out.println("(1) - Criar novo cadastro. ");
+        system.out.println("(2) - Realizar login. ");
+        opcao = scanner.nextLine();
+
+        if (opcao == 1) {
+
+            System.out.println("Criando cadastro: ");
+
+            Cliente cliente = new Cliente();
+
+            cliente.criarUsuario();
+
+
+        }
     }
 }
