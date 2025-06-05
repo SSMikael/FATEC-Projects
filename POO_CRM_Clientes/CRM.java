@@ -114,7 +114,7 @@ private class Usuario {
             System.out.println("Senha inválida. Por favor digite novamente:");
             this.senha = scanner.nextLine();
         }
-        
+
         System.out.println("Usuário criado com sucesso!");
         scanner.close();
     }
@@ -172,13 +172,14 @@ public class CRM {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bem vindo ao CRM FATEC!");
-        system.out.println("Selecione uma das opções para prosseguir:");
+        System.out.println("Selecione uma das opções para prosseguir:");
 
         int opcao;
         opcao = 0;
 
-        system.out.println("(1) - Criar novo cadastro. ");
-        system.out.println("(2) - Realizar login. ");
+        System.out.println("/n");
+        System.out.println("(1) - Criar novo cadastro. ");
+        System.out.println("(2) - Realizar login. ");
         opcao = scanner.nextLine();
 
         if (opcao == 1) {
